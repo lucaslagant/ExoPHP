@@ -60,14 +60,31 @@ $capitales = array(
     "Zagreb" => "Croatie"
 );
 
-asort($capitales);
 
+// 1
+// ksort($capitales);
+// foreach ($capitales as $ville => $pays) {
+//     echo $ville . ' est la capitale de '.$pays .'<br>';
+// }
+
+
+
+
+
+// 2
+// asort($capitales);
+// foreach ($capitales as $ville => $pays) {
+//     echo $pays . ' à pour capitale : '.$ville .'<br>';
+// }
+
+
+
+//3
 foreach ($capitales as $ville => $pays) {
-    echo $ville . ' est la capitales de '.$pays .'<br>';
-}
-
-foreach ($capitales as $pays => $ville) {
-    echo $pays . ' est la capitales de '.$ville .'<br>';
+    if (substr($pays,0,1) == "B") {
+        unset($pays);
+    }
+    echo $pays.' ';
 }
 
 ?>
