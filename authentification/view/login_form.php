@@ -10,6 +10,12 @@
     <title>Formulaire authentification</title>
 </head>
 <body>
+    <?php
+    
+    if (isset($_SESSION['email'])) {
+       echo "Vous êtes connecté en tant que :" .$_SESSION['email'];
+    }else {
+        ?>
     <h1>Connexion</h1>
     <form action="../ctrl/login_ctrl.php" method="POST">      
         <div class="label">
@@ -24,6 +30,9 @@
             <input type="submit" value="Se connecter" name="submit">
             <input type="reset" value="Annuler">
         </div>
-    </form>    
+    </form>
+        <?php
+    }
+    ?>    
 </body>
 </html>
